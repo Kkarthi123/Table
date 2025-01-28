@@ -1,0 +1,36 @@
+#table-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #table-container td, #table-container th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #table-container tr:hover {background-color: whitesmoke;}
+  
+  #table-container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #203054;
+    color: white;
+  }
+
+  #table-container tr input{
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #717171;
+  }
+
+  #table-container tr button{
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    background: linear-gradient(45deg, #1a896b, #1ba27e);
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+  }
