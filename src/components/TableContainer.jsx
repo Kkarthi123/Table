@@ -88,24 +88,24 @@ return (
 
             <tr className='table-header-row'>
                     {
-                        ColumnConfig.map((column)=>(
-                            <th className="border border-black p-2">{column}</th>
+                        ColumnConfig.map((column, i)=>(
+                            <th key={i} className="border border-black p-2">{column}</th>
                         ))
                     }
             </tr>
         </thead>
         <tbody>
             {
-                TableData.map((row)=>{
+                TableData.map((row, i)=>{
                     return (
-                       <>
-                            <RowData row={row} calculateByPercentage={calculateByPercentage}  calculateByValue={calculateByValue}/>
+                       <React.Fragment key={`parent-${row.id || row.label}-${i}`}>
+                            <RowData key={`parent-${row.label}-${i}`} row={row} calculateByPercentage={calculateByPercentage}  calculateByValue={calculateByValue}/>
                             {
-                                row.children.map((child)=>(
-                                    <RowData row={child} calculateByPercentage={calculateByPercentage}  calculateByValue={calculateByValue}/>
+                                row.children.map((child , j)=>(
+                                    <RowData key={`child-${child.label}-${i}-${j}`}  row={child} calculateByPercentage={calculateByPercentage}  calculateByValue={calculateByValue}/>
                                 ))
                             }
-                       </>
+                       </React.Fragment>
                     )
                 })
             }
